@@ -1,3 +1,5 @@
+'use strict';
+
 const TestCase = require('./TestCase');
 const PugInheritance = require('../src');
 
