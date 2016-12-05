@@ -3,7 +3,6 @@
 const glob = require('glob');
 const path = require('path');
 const colors = require('colors');
-const PugInheritanceTest = require('./PugInheritanceTest');
 
 let tests = 0;
 let assertions = 0;
