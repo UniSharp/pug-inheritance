@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/UniSharp/pug-inheritance.svg?branch=master)](https://travis-ci.org/UniSharp/pug-inheritance)
 
-Get affected files when modify a file.
+Get files which include or extend the given [Pug](https://github.com/pugjs/pug) file.
 
 ## Installation
 
