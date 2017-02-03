@@ -1,4 +1,4 @@
-# Another Implementation of Pug Inheritance by UniSharp
+# Pug Inheritance - Another Implementation by UniSharp
 
 [![Build Status](https://travis-ci.org/UniSharp/pug-inheritance.svg?branch=master)](https://travis-ci.org/UniSharp/pug-inheritance)
 
