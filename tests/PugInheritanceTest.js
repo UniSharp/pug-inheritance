@@ -42,6 +42,13 @@ class PugInheritanceTest extends TestCase {
       this.pugInheritance.getInheritance('tests/fixtures/test-5/test-5-1.pug')
     );
   }
+
+  testPatternNormalize() {
+    this.assertEquals(
+      new PugInheritance('tests/fixtures/**/*.pug').getInheritance('tests/fixtures/test-5/test-5-1.pug'),
+      new PugInheritance('./tests/fixtures/**/*.pug').getInheritance('./tests/fixtures/test-5/test-5-1.pug')
+    );
+  }
 }
 
 module.exports = PugInheritanceTest;

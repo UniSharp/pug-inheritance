@@ -11,7 +11,7 @@ class PugInheritance {
   constructor(pattern) {
     this.pugs = [];
 
-    this.pattern = pattern;
+    this.pattern = path.normalize(pattern);
 
     this.buildRelations();
   }
@@ -46,7 +46,7 @@ class PugInheritance {
   }
 
   getInheritance(file) {
-    let relations = [file];
+    let relations = [file = path.normalize(file)];
 
     ['extendedBy', 'includedBy'].forEach(prop => {
       this.pugs[file][prop].forEach(relation => {
