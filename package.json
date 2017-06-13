@@ -24,5 +24,8 @@
     },
     "devDependencies": {
         "colors": "^1.1.2"
+    },
+    "scripts": {
+        "test": "node tests"
     }
 }
