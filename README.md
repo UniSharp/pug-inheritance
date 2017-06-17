@@ -45,3 +45,7 @@ console.log(pugInheritance.getInheritance('resources/pug/layout/app.pug'));
 ## Integration with [gulp-pug](https://github.com/pugjs/gulp-pug)
 
 See [@unisharp/gulp-pug-inheritance](https://github.com/UniSharp/gulp-pug-inheritance).
+
+## License
+
+[MIT](https://unisharp.mit-license.org/)
