@@ -25,21 +25,29 @@ class PugInheritance {
         includedBy: [],
       };
 
-      walk(parse(lex(fs.readFileSync(file, 'utf8'))), node => {
-        if ('Extends' !== node.type && 'RawInclude' !== node.type) {
-          return;
-        }
+      try {
+        walk(parse(lex(fs.readFileSync(file, 'utf8'))), node => {
+          if ('Extends' !== node.type && 'RawInclude' !== node.type) {
+            return;
+          }
 
-        this.pugs[file][{ Extends: 'extends', RawInclude: 'includes' }[node.type]].push(
-          path.join(path.dirname(file), `${node.file.path}.pug`)
-        );
-      });
+          this.pugs[file][{ Extends: 'extends', RawInclude: 'includes' }[node.type]].push(
+            path.join(path.dirname(file), `${node.file.path}.pug`)
+          );
+        });
+      } catch (e) {
+        console.error(e);
+      }
     });
 
     for (let file in this.pugs) {
       ['extends', 'includes'].forEach(prop => {
         this.pugs[file][prop].forEach(relation => {
-          this.pugs[relation][{ extends: 'extendedBy', includes: 'includedBy' }[prop]].push(file);
+          try {
+            this.pugs[relation][{ extends: 'extendedBy', includes: 'includedBy' }[prop]].push(file);
+          } catch (e) {
+            console.error(e);
+          }
         });
       });
     }
