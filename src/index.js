@@ -46,7 +46,7 @@ class PugInheritance {
           try {
             this.pugs[relation][{ extends: 'extendedBy', includes: 'includedBy' }[prop]].push(file);
           } catch (e) {
-            console.error(e);
+            console.error(`File [${relation}] not found. (${file})`);
           }
         });
       });
